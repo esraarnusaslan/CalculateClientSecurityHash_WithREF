@@ -1,7 +1,7 @@
 {
-  "name": "Calculate_Client_Security_Hash_CrashCourse",
+  "name": "Calculate_Client_Security_Hash_Crash",
   "projectId": "7b3b593f-efa7-4e90-8b6f-6eba6a0b879b",
-  "description": "Robotic Enterprise Framework",
+  "description": "ACME System1 ",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.24.1]",
