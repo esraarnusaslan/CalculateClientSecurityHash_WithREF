@@ -40,6 +40,7 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -86,6 +87,9 @@
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="System1_ExtractClientInformation" sap:VirtualizedContainerService.HintSize="828.0000000000001,1406.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -166,7 +170,7 @@
                   <OutArgument x:TypeArguments="x:String">[out_ClientID]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[arrayOfClientProperties(0).Split(":"c)(1)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[str_GetClientDetails.Substring(str_GetClientDetails.IndexOf("Client ID: ")+"Client ID :".Length).Split(Environment.NewLine.ToCharArray)(0)]</InArgument>
                 </Assign.Value>
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
@@ -174,7 +178,7 @@
                   <OutArgument x:TypeArguments="x:String">[out_ClientName]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[arrayOfClientProperties(1).Split(":"c)(1)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[str_GetClientDetails.Substring(str_GetClientDetails.IndexOf("Client Name: ")+"Client Name :".Length).Split(Environment.NewLine.ToCharArray)(0)]</InArgument>
                 </Assign.Value>
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
@@ -182,7 +186,7 @@
                   <OutArgument x:TypeArguments="x:String">[out_ClientCountry]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[arrayOfClientProperties(2).Split(":"c)(1)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[str_GetClientDetails.Substring(str_GetClientDetails.IndexOf("Client Country: ")+"Client Country :".Length).Split(Environment.NewLine.ToCharArray)(0)]</InArgument>
                 </Assign.Value>
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
